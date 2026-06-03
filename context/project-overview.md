@@ -24,15 +24,15 @@
 
 Developers scatter their essentials across too many places:
 
-| What | Where it lives today |
-|---|---|
-| Code snippets | VS Code, Notion, Gists |
-| AI prompts | Chat histories |
-| Context files | Buried in project folders |
-| Useful links | Browser bookmarks |
-| Documentation | Random folders |
+| What              | Where it lives today        |
+| ----------------- | --------------------------- |
+| Code snippets     | VS Code, Notion, Gists      |
+| AI prompts        | Chat histories              |
+| Context files     | Buried in project folders   |
+| Useful links      | Browser bookmarks           |
+| Documentation     | Random folders              |
 | Terminal commands | `.txt` files / bash history |
-| Project templates | GitHub Gists |
+| Project templates | GitHub Gists                |
 
 This creates **context switching, lost knowledge, and inconsistent workflows**. DevStash replaces all of it with one hub.
 
@@ -40,12 +40,12 @@ This creates **context switching, lost knowledge, and inconsistent workflows**. 
 
 ## Target Users
 
-| User Type | Core Need |
-|---|---|
-| **Everyday Developer** | Fast access to snippets, prompts, commands, links |
-| **AI-first Developer** | Store prompts, context files, system messages, workflows |
-| **Content Creator / Educator** | Organise code blocks, explanations, course notes |
-| **Full-stack Builder** | Collect patterns, boilerplates, API examples |
+| User Type                      | Core Need                                                |
+| ------------------------------ | -------------------------------------------------------- |
+| **Everyday Developer**         | Fast access to snippets, prompts, commands, links        |
+| **AI-first Developer**         | Store prompts, context files, system messages, workflows |
+| **Content Creator / Educator** | Organise code blocks, explanations, course notes         |
+| **Full-stack Builder**         | Collect patterns, boilerplates, API examples             |
 
 ---
 
@@ -57,15 +57,15 @@ Items are the core unit of DevStash. Each item has a **type** that determines it
 
 **System types** (built-in, not editable):
 
-| Type | Icon | Color | Content Kind | Free |
-|---|---|---|---|---|
-| `snippet` | `<Code />` | `#3b82f6` Blue | Text / code | ✅ |
-| `prompt` | `<Sparkles />` | `#8b5cf6` Purple | Text | ✅ |
-| `note` | `<StickyNote />` | `#fde047` Yellow | Text / markdown | ✅ |
-| `command` | `<Terminal />` | `#f97316` Orange | Text | ✅ |
-| `link` | `<Link />` | `#10b981` Emerald | URL | ✅ |
-| `file` | `<File />` | `#6b7280` Gray | File upload | 🔒 Pro |
-| `image` | `<Image />` | `#ec4899` Pink | Image upload | 🔒 Pro |
+| Type      | Icon             | Color             | Content Kind    | Free   |
+| --------- | ---------------- | ----------------- | --------------- | ------ |
+| `snippet` | `<Code />`       | `#3b82f6` Blue    | Text / code     | ✅     |
+| `prompt`  | `<Sparkles />`   | `#8b5cf6` Purple  | Text            | ✅     |
+| `note`    | `<StickyNote />` | `#fde047` Yellow  | Text / markdown | ✅     |
+| `command` | `<Terminal />`   | `#f97316` Orange  | Text            | ✅     |
+| `link`    | `<Link />`       | `#10b981` Emerald | URL             | ✅     |
+| `file`    | `<File />`       | `#6b7280` Gray    | File upload     | 🔒 Pro |
+| `image`   | `<Image />`      | `#ec4899` Pink    | Image upload    | 🔒 Pro |
 
 > **Content kinds:** `text` (snippet, note, prompt, command), `url` (link), `file` (file, image)
 
@@ -86,12 +86,14 @@ Items are the core unit of DevStash. Each item has a **type** that determines it
 Group items of any type into named collections. Items can belong to **multiple collections**.
 
 Examples:
+
 - `React Patterns` — snippets, notes
 - `Context Files` — files
 - `Python Snippets` — snippets
 - `Interview Prep` — snippets, notes, links
 
 Features:
+
 - ⭐ Favourite collections
 - 🎨 Color-coded cards based on the most common item type
 - Set a `defaultTypeId` for new items added to a collection
@@ -101,6 +103,7 @@ Features:
 ### C. Search
 
 Powerful full-text search across:
+
 - Item **title**
 - Item **content**
 - **Tags**
@@ -119,12 +122,12 @@ Powered by **NextAuth v5**.
 
 ### E. AI Features (Pro only)
 
-| Feature | Description |
-|---|---|
+| Feature                 | Description                                  |
+| ----------------------- | -------------------------------------------- |
 | 🏷️ Auto-tag suggestions | Suggests relevant tags based on item content |
-| 📝 AI Summaries | One-line summary of long items |
-| 🔍 Explain This Code | Plain-English explanation of a snippet |
-| ✨ Prompt Optimizer | Rewrites a prompt for better LLM results |
+| 📝 AI Summaries         | One-line summary of long items               |
+| 🔍 Explain This Code    | Plain-English explanation of a snippet       |
+| ✨ Prompt Optimizer     | Rewrites a prompt for better LLM results     |
 
 Model: `gpt-5-nano` (OpenAI)
 
@@ -359,6 +362,7 @@ model ItemTag {
 ```
 
 **Key relationships:**
+
 - A **User** owns many Items, Collections, and custom ItemTypes
 - An **Item** belongs to one ItemType, but can be in many Collections
 - An **Item** can have many Tags; Tags can be on many Items
@@ -369,19 +373,20 @@ model ItemTag {
 
 ## Tech Stack
 
-| Layer | Choice | Notes |
-|---|---|---|
-| **Framework** | Next.js 16 / React 19 | SSR + API routes in one repo |
-| **Language** | TypeScript | Strict mode |
-| **Database** | Neon (PostgreSQL) | Serverless Postgres |
-| **ORM** | Prisma 7 | Always use migrations, never `db push` |
-| **Auth** | NextAuth v5 | Email/password + GitHub OAuth |
-| **File Storage** | Cloudflare R2 | Pro users only |
-| **AI** | OpenAI `gpt-5-nano` | Via API routes |
-| **CSS** | Tailwind CSS v4 + ShadCN UI | Dark mode default |
-| **Caching** | Redis (optional) | TBD |
+| Layer            | Choice                      | Notes                                  |
+| ---------------- | --------------------------- | -------------------------------------- |
+| **Framework**    | Next.js 16 / React 19       | SSR + API routes in one repo           |
+| **Language**     | TypeScript                  | Strict mode                            |
+| **Database**     | Neon (PostgreSQL)           | Serverless Postgres                    |
+| **ORM**          | Prisma 7                    | Always use migrations, never `db push` |
+| **Auth**         | NextAuth v5                 | Email/password + GitHub OAuth          |
+| **File Storage** | Cloudflare R2               | Pro users only                         |
+| **AI**           | OpenAI `gpt-5-nano`         | Via API routes                         |
+| **CSS**          | Tailwind CSS v4 + ShadCN UI | Dark mode default                      |
+| **Caching**      | Redis (optional)            | TBD                                    |
 
 **Useful Docs:**
+
 - [Prisma 7 Docs](https://www.prisma.io/docs)
 - [NextAuth v5 Docs](https://authjs.dev)
 - [Cloudflare R2 Docs](https://developers.cloudflare.com/r2)
@@ -395,29 +400,29 @@ model ItemTag {
 
 ### Free Plan
 
-| Limit | Value |
-|---|---|
-| Items | 50 total |
-| Collections | 3 |
-| Item Types | System types only (no file/image) |
-| Search | Basic |
-| File uploads | ❌ |
-| AI features | ❌ |
+| Limit        | Value                             |
+| ------------ | --------------------------------- |
+| Items        | 50 total                          |
+| Collections  | 3                                 |
+| Item Types   | System types only (no file/image) |
+| Search       | Basic                             |
+| File uploads | ❌                                |
+| AI features  | ❌                                |
 
 ### Pro Plan — $8/month or $72/year
 
-| Feature | Value |
-|---|---|
-| Items | Unlimited |
-| Collections | Unlimited |
-| Item Types | All system types (file + image) |
-| Custom Types | ✅ (coming later) |
-| File & Image uploads | ✅ via Cloudflare R2 |
-| AI auto-tagging | ✅ |
-| AI code explanation | ✅ |
-| AI prompt optimizer | ✅ |
-| Export (JSON/ZIP) | ✅ |
-| Priority support | ✅ |
+| Feature              | Value                           |
+| -------------------- | ------------------------------- |
+| Items                | Unlimited                       |
+| Collections          | Unlimited                       |
+| Item Types           | All system types (file + image) |
+| Custom Types         | ✅ (coming later)               |
+| File & Image uploads | ✅ via Cloudflare R2            |
+| AI auto-tagging      | ✅                              |
+| AI code explanation  | ✅                              |
+| AI prompt optimizer  | ✅                              |
+| Export (JSON/ZIP)    | ✅                              |
+| Priority support     | ✅                              |
 
 Payments via **Stripe**. User model stores `stripeCustomerId` and `stripeSubscriptionId`.
 
@@ -456,6 +461,19 @@ Payments via **Stripe**. User model stores `stripeCustomerId` and `stripeSubscri
 - Clean typography with generous whitespace
 - Subtle borders and shadows
 - Syntax highlighting on all code blocks
+
+### Design References
+
+- [Notion](https://notion.so) - Clean organization
+- [Linear](https://linear.app) - Modern dev aesthetic
+- [Raycast](https://raycast.com) - Quick access patterns
+
+### Screenshots
+
+Refer to the screenshots below as a base for the dashboard UI. It does not have to be exact. Use it as a reference:
+
+- @context/screenshots/dashboard-ui-main.png
+- @context/screenshots/dashboard-ui-drawer.png
 
 ### Layout
 
