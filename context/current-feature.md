@@ -1,18 +1,23 @@
 # Current Feature
 
-<!--Feature name and short description  -->
+Dashboard UI Phase 3 - main dashboard content from @context/features/dashboard-phase-3-spec.md
 
 ## Status
 
-Completed
+In Progress
 
 ## Goals
 
-<!-- Goals and requirements -->
+- Implement the main area to the right of the sidebar.
+- Show recent collections.
+- Show pinned items.
+- Show 10 recent items.
+- Add 4 top stats cards for total items, collections, favorite items, and favorite collections.
 
 ## Notes
 
-<!-- Any, extra notes -->
+- Use @context/features/dashboard-phase-3-spec.md as the source spec for this feature.
+- Use mock dashboard data directly until database-backed data is implemented.
 
 ## History
 
@@ -31,3 +36,10 @@ Completed
 - 2026-06-04: Updated Dashboard UI Phase 2 mobile sidebar to use the shadcn/ui Sheet component and reverified with `npm.cmd run lint` and `npm.cmd run build`.
 - 2026-06-04: Improved Dashboard UI Phase 2 sidebar with collapsible sections, shadcn/ui ScrollArea scrolling, viewport-safe sizing, and a user settings action. Reverified with `npm.cmd run lint`, `npm.cmd run build`, and a local `/dashboard` HTTP check.
 - 2026-06-04: Completed Dashboard UI Phase 2 and cleared the active feature details.
+- 2026-06-04: Set current feature to Dashboard UI Phase 3 from `context/features/dashboard-phase-3-spec.md`.
+- 2026-06-04: Implemented Dashboard UI Phase 3 main content with stats cards, recent collections, pinned items, and recent items using mock data.
+- 2026-06-04: Verified Dashboard UI Phase 3 with `npm.cmd run lint`, `npm.cmd run build`, and a local `/dashboard` HTTP check.
+- 2026-06-04: Refactored Dashboard UI Phase 3 to use shadcn/ui-style Card, Badge, Avatar, Separator, Button, and ScrollArea components.
+- 2026-06-04: Reverified the shadcn/ui Phase 3 refactor with `npm.cmd run lint`, `npm.cmd run build`, and a local `/dashboard` HTTP check.
+- 2026-06-04: Restored the `/dashboard` route as a server component and moved interactive dashboard state into `src/components/dashboard/DashboardShell.tsx`.
+- 2026-06-04: Reverified the server-route/client-shell split with `npm.cmd run lint`, `npm.cmd run build`, and a local `/dashboard` HTTP check.
